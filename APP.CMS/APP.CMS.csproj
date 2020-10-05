@@ -5,7 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\APP.MANAGER\APP.MANAGER.csproj" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\APP.MODELS\APP.MODELS.csproj" />
     <ProjectReference Include="..\APP.UTILS\APP.UTILS.csproj" />
   </ItemGroup>

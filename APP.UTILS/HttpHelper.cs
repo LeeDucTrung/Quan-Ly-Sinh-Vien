@@ -75,14 +75,14 @@ namespace Portal.Utils
                 using (var httpClient = new HttpClient())
                 {
                     httpClient.DefaultRequestHeaders.Add("checktoken", checktoken);
-                    if(checktoken == "true")
+                    /*if(checktoken == "true")
                     {
                         var account = SessionExtensions.Get<Accounts>(httpContextAccessor.HttpContext.Session, SessionExtensions.SessionAccount);
                         if (account != null)
                         {
                             httpClient.DefaultRequestHeaders.Add("token", account.Token);
                         }
-                    }
+                    }*/
                     httpClient.DefaultRequestVersion = HttpVersion.Version10;
                     StringContent content = new StringContent(request, Encoding.UTF8, "application/json");
                     using (var response = await httpClient.GetAsync(string.Format("{0}?{1}", url, request)))

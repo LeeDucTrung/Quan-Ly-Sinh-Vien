@@ -14,6 +14,8 @@ namespace APP.MODELS
         public int Id { get; set; }
         [Column("TenSinhVien")]
         public string tenSinhVien { get; set; }
+        [Column("MaSinhVien")]
+        public int maSinhVien { get; set; }
         [Column("GioiTinh")]
         public int? gioiTinh { get; set; }
         [Column("NgaySinh")]
