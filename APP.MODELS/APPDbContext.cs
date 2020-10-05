@@ -21,6 +21,6 @@ namespace APP.MODELS
 
             // modelBuilder.HasDefaultSchema("orcl");
         }
-        public DbSet<Users> Users { get; set; }
+        public DbSet<SinhViens> SinhViens { get; set; }
     }
 }

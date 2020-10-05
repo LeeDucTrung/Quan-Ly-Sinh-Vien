@@ -7,14 +7,13 @@ using System.Text;
 
 namespace APP.REPOSITORY
 {
-   
-    public interface IUserRepository : IRepository<Users>
+    public interface ISinhVienRepository : IRepository<SinhViens>
     {
 
     }
-    public class UserRepository : Repository<Users>, IUserRepository
+    public class SinhVienRepository : Repository<SinhViens>, ISinhVienRepository
     {
-        public UserRepository(DbContext context) : base(context)
+        public SinhVienRepository(DbContext context) : base(context)
         {
 
         }

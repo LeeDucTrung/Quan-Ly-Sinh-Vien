@@ -10,7 +10,7 @@ namespace APP.REPOSITORY
 {
     public interface IUnitOfWork : IDisposable
     {
-        public IUserRepository UserRepository { get; }
+        public ISinhVienRepository SinhVienRepository { get; }
         Task CreateTransaction();
         Task Commit();
         Task Rollback();
@@ -24,7 +24,7 @@ namespace APP.REPOSITORY
         public UnitOfWork(IDbContextFactory<APPDbContext> dbContextFactory, Microsoft.AspNetCore.Http.IHttpContextAccessor httpContextAccessor)
         {
             _dbContext = dbContextFactory.GetContext();
-            UserRepository = new UserRepository(_dbContext);
+            SinhVienRepository = new SinhVienRepository(_dbContext);
 
         }
         #region Transaction
@@ -51,7 +51,7 @@ namespace APP.REPOSITORY
         #endregion
 
         private bool disposedValue = false; // To detect redundant calls
-        public IUserRepository UserRepository { get; }
+        public ISinhVienRepository SinhVienRepository { get; }
 
 
 

@@ -22,7 +22,7 @@ namespace APP.DependencyInjection
 
             services.AddTransient<IDbContextFactory<APPDbContext>, APPDbContextFactory>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
-            services.AddTransient<IUserManager, UserManager>();
+            services.AddTransient<ISinhVienManager, SinhVienManager>();
 
         }
     }

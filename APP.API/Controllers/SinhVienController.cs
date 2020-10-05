@@ -8,22 +8,22 @@ using Portal.Utils;
 
 namespace APP.API.Controllers
 {
-    [Route("api/user")]
+    [Route("api/sinhvien")]
     [ApiController]
-    public class UserController : Controller
+    public class SinhVienController : Controller
     {
-        private readonly IUserManager userManager;
+        private readonly ISinhVienManager _sinhvien;
 
-        public UserController(IUserManager Accounts)
+        public SinhVienController(ISinhVienManager sinhVienManager)
         {
-            this.userManager = Accounts;
+            this._sinhvien = sinhVienManager;
         }
         [HttpGet("get-list")]
-        public async Task<IActionResult> GetList(string userName, string fullName, int status = -1, int pageSize = 10, int pageNumber = 0)
+        public async Task<IActionResult> GetList(string name, int pageSize = 10, int pageNumber = 0)
         {
             try
             {
-                var data = await userManager.Get_List(userName, fullName, status, pageSize, pageNumber);
+                var data = await _sinhvien.Get_List(name, pageSize, pageNumber);
                 if (data == null)
                 {
                     throw new Exception(MessageConst.DATA_NOT_FOUND);
